@@ -43,5 +43,8 @@
     "unbuild": "^2.0.0",
     "vitest": "^2.1.6"
   },
-  "packageManager": "pnpm@9.14.2"
+  "packageManager": "pnpm@9.14.2",
+  "dependencies": {
+    "unctx": "^2.4.0"
+  }
 }
