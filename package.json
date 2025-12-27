@@ -1,8 +1,8 @@
 {
-  "name": "packageName",
-  "version": "0.0.0",
-  "description": "",
-  "repository": "unjs/packageName",
+  "name": "proxyable",
+  "version": "1.0.0",
+  "description": "Dynamic JavaScript proxy creation with isolated context-based interception",
+  "repository": "unjs/proxyable",
   "license": "MIT",
   "sideEffects": false,
   "type": "module",

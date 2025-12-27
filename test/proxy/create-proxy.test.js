@@ -65,7 +65,7 @@ describe('createProxy', () => {
 it('should handle ownKeys trap with dynamic keys', () => {
   const { proxy, addInterceptor } = createProxy({ key1: 'value1' })
 
-  addInterceptor('ownKeys', (target) => {
+  addInterceptor('ownKeys', (_target) => {
     return ['key1', 'dynamicKey']
   })
 
