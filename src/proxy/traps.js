@@ -17,17 +17,20 @@ export const runInterceptors = (interceptors, fallback, ...args) => {
 
 /**
  * Executes boolean interceptors for traps that require approval (e.g., `set`, `deleteProperty`).
- * If any interceptor returns `false`, the operation is blocked. Otherwise, the fallback is executed.
+ * If any interceptor returns `false`, the operation is blocked.
+ * If any interceptor returns `true`, the operation is considered handled (fallback not called).
+ * Otherwise, the fallback is executed.
  *
  * @param {Function[]} interceptors - An array of interceptor functions.
  * @param {Function} fallback - The Reflect operation to call if all interceptors allow.
  * @param {...any} args - Arguments to pass to the interceptors and the fallback.
- * @returns {boolean|*} - `false` if any interceptor denies, or the fallback result.
+ * @returns {boolean|*} - `false` if any interceptor denies, `true` if handled, or the fallback result.
  */
 export const runBooleanInterceptors = (interceptors, fallback, ...args) => {
   for (const interceptor of interceptors) {
-    const allowed = interceptor(...args)
-    if (allowed === false) return false
+    const result = interceptor(...args)
+    if (result === false) return false
+    if (result === true) return true // Operation handled, skip fallback
   }
   return fallback(...args)
 }
