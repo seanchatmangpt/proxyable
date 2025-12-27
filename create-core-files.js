@@ -1,5 +1,5 @@
-import { promises as fs } from 'fs'
-import { join } from 'path'
+import { promises as fs } from 'node:fs'
+import { join } from 'node:path'
 
 // Helper to create a directory if it doesn't exist
 const createDirectory = async (path) => {

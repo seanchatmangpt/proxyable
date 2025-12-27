@@ -90,7 +90,7 @@ export function createProxy(target = {}) {
 
     const interceptorList = `${trap}Interceptors`;
     if (!Array.isArray(context[interceptorList])) {
-      throw new Error(`Trap "${trap}" is not initialized in the context.`);
+      throw new TypeError(`Trap "${trap}" is not initialized in the context.`);
     }
 
     context[interceptorList].push(interceptor);

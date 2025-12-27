@@ -1,7 +1,7 @@
 import { createContext as unctxCreateContext, createNamespace as unctxCreateNamespace } from 'unctx'
 
 // Proxyable's global namespace to avoid context conflicts
-const proxyableNamespace = unctxCreateNamespace('proxyable')
+const _proxyableNamespace = unctxCreateNamespace('proxyable')
 
 /**
  * Creates a new context for Proxyable.

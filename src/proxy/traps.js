@@ -45,8 +45,8 @@ export const runOwnKeysInterceptors = (interceptors, fallback, target) => {
   for (const interceptor of interceptors) {
     const additionalKeys = interceptor(target)
     if (Array.isArray(additionalKeys)) {
-      additionalKeys.forEach((key) => keys.add(key))
+      for (const key of additionalKeys) keys.add(key)
     }
   }
-  return Array.from(keys)
+  return [...keys]
 }
