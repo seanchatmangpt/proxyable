@@ -1,4 +1,6 @@
-import { createProxy } from './proxy/createProxy.js'
-import { useContext, setContext } from './context/context.js'
 
-export { createProxy, useContext, setContext }
+
+
+
+export {createProxy} from './proxy/create-proxy.js'
+export {createContext} from './context/context.js'
